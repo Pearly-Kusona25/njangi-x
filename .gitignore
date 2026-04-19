@@ -1,0 +1,17 @@
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Expo
+.expo/
+.expo-shared/
+web-build/
+dist/
+*.db
+
+# environment
+.env
+.env.*.local
+.DS_Store

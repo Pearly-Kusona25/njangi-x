@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["https://deno.land/std@0.210.0/types.d.ts"],
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "esModuleInterop": true
+  },
+  "imports": {
+    "supabase": "https://esm.sh/@supabase/supabase-js@2.33.0",
+    "std/": "https://deno.land/std@0.210.0/"
+  }
+}

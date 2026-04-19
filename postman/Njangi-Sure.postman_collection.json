@@ -1,0 +1,150 @@
+{
+  "info": {
+    "name": "Njangi-Sure Supabase Functions",
+    "_postman_id": "e7268c3f-4d7c-4b91-9b80-ce3dbfe4a0ee",
+    "description": "Collection for Njangi-Sure Supabase Edge Functions and payment/webhook endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{SUPABASE_SERVICE_ROLE_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 5000,\n  \"phone\": \"677123456\",\n  \"user_id\": \"{{USER_ID}}\",\n  \"group_id\": \"{{GROUP_ID}}\",\n  \"provider\": \"MTN\"\n}"
+        },
+        "url": {
+          "raw": "{{SUPABASE_FUNCTIONS_URL}}/create-payment",
+          "host": [
+            "{{SUPABASE_FUNCTIONS_URL}}"
+          ],
+          "path": [
+            "create-payment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Fapshi Webhook",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"externalId\": \"{{USER_ID}}:{{GROUP_ID}}:1234567890\",\n  \"status\": \"success\",\n  \"amount\": 5000,\n  \"transactionId\": \"fapshi-tx-1234\"\n}"
+        },
+        "url": {
+          "raw": "{{SUPABASE_FUNCTIONS_URL}}/fapshi-webhook",
+          "host": [
+            "{{SUPABASE_FUNCTIONS_URL}}"
+          ],
+          "path": [
+            "fapshi-webhook"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Apply Commission",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{SUPABASE_SERVICE_ROLE_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"contribution_id\": \"{{CONTRIBUTION_ID}}\"\n}"
+        },
+        "url": {
+          "raw": "{{SUPABASE_FUNCTIONS_URL}}/apply-commission",
+          "host": [
+            "{{SUPABASE_FUNCTIONS_URL}}"
+          ],
+          "path": [
+            "apply-commission"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Reminders",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{SUPABASE_SERVICE_ROLE_KEY}}"
+          }
+        ],
+        "url": {
+          "raw": "{{SUPABASE_FUNCTIONS_URL}}/send-reminders",
+          "host": [
+            "{{SUPABASE_FUNCTIONS_URL}}"
+          ],
+          "path": [
+            "send-reminders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Next Beneficiary",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{SUPABASE_SERVICE_ROLE_KEY}}"
+          }
+        ],
+        "url": {
+          "raw": "{{SUPABASE_FUNCTIONS_URL}}/get-next-beneficiary?group_id={{GROUP_ID}}",
+          "host": [
+            "{{SUPABASE_FUNCTIONS_URL}}"
+          ],
+          "path": [
+            "get-next-beneficiary"
+          ],
+          "query": [
+            {
+              "key": "group_id",
+              "value": "{{GROUP_ID}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "expo": {
+    "name": "NjangiX",
+    "slug": "njangix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F172A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.njangix.app",
+      "buildNumber": "1"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0F172A"
+      },
+      "package": "com.njangix.app",
+      "versionCode": 1,
+      "permissions": [
+        "NOTIFICATIONS",
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#16A34A",
+          "sounds": []
+        }
+      ]
+    ],
+    "extra": {
+      "supabaseUrl": "",
+      "supabaseAnonKey": "",
+      "fapshiApiUser": "",
+      "fapshiApiKey": "",
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
+  }
+}
